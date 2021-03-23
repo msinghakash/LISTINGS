@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".LoginScreen"
+android:background="@color/yellow"
+android:padding="30dp">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/splash_screen_image1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+<!-- the transitionName tag below is assigned to an element and then ir is pasted on
+     to where ever we want to perform the transition to.
+     Since I want to perform the transition to the whole login screen when the user
+     presses the login button, therefore, I will be pasting this same tag int he Scroll view
+     of activity_login.xml file.
+     If I wanted to make transition only to one widget in any xml file then I will be pasting
+     this tag assigned to the login button here to that particular widget tag-->
+    <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:id="@+id/login_btn"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_weight="1"
+            android:background="@color/white"
+            tools:ignore="Suspicious0dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"
+            android:onClick="loginScreenCalling"
+            android:transitionName="transition_login"></androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:id="@+id/signup_btn"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            tools:ignore="Suspicious0dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="signupScreenCalling"
+            android:transitionName="transition_signup"></androidx.appcompat.widget.AppCompatButton>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>

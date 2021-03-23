@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- translate will move the icons or text from  one place to another -->
+    <translate
+        android:fromXDelta="0%"
+        android:fromYDelta="-50%"
+        android:duration="1500"/>
+<!-- This will add fade effect -->
+    <alpha
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0"
+        android:duration="1500"/>
+
+
+
+</set>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LISTINGS</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_full_name">Full Name</string>
+    <string name="enter_phone_number">Phone Number</string>
+    <string name="enter_email_id">Email</string>
+    <!-- OTP SCREEN ENTERIES-->
+    <string name="OTP_description_text">OTP send on number \n12345</string>
+</resources>
