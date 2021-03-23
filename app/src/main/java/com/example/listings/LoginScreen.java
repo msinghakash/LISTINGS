@@ -1,7 +1,7 @@
 package com.example.listings;
 
-import Login_Signup.Login;
-import Login_Signup.SignUp;
+import Login_Signup.Login_Signup.Login;
+import Login_Signup.Login_Signup.SignUp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;

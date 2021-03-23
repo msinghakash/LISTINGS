@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
 import com.example.listings.R;
 
