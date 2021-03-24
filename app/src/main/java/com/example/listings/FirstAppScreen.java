@@ -11,14 +11,14 @@ import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 
-public class LoginScreen extends AppCompatActivity {
+public class FirstAppScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Hiding Status Bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_login_screen);
+        setContentView(R.layout.activity_first_app_screen);
     }
 
     public void loginScreenCalling(View view) {
@@ -33,7 +33,7 @@ public class LoginScreen extends AppCompatActivity {
         // transition_login String, assigned by us.
         pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
         // ActivityOptions to transition between Activities using cross-Activity scene animations.
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginScreen.this, pairs);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(FirstAppScreen.this, pairs);
         startActivity(intent, options.toBundle());
     }
 
@@ -49,7 +49,7 @@ public class LoginScreen extends AppCompatActivity {
         // transition_login String, assigned by us.
         pairs[0] = new Pair<View, String>(findViewById(R.id.signup_btn), "transition_signup");
         // ActivityOptions to transition between Activities using cross-Activity scene animations.
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginScreen.this, pairs);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(FirstAppScreen.this, pairs);
         startActivity(intent, options.toBundle());
     }
 }

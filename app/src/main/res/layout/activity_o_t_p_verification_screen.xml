@@ -38,6 +38,7 @@
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:layout_gravity="center"/>
 
         <com.chaos.view.PinView
@@ -49,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="50dp"
-            app:lineColor="@color/white"
+
             android:itemBackground="@color/white"
             style="@style/PinWidget.PinView"
             android:cursorVisible="true"
@@ -66,6 +67,7 @@
             android:layout_marginTop="30dp"
             android:background="@color/black"
             android:text="VERIFY CODE"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="20dp" />

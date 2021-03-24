@@ -43,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CHOOSE GENDER"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"/>
 
@@ -60,19 +61,22 @@
                     android:id="@+id/radioButton3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male" />
+                    android:text="Male"
+                    android:textStyle="bold"/>
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female" />
+                    android:text="Female"
+                    android:textStyle="bold"/>
 
                 <RadioButton
                     android:id="@+id/radioButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Other" />
+                    android:text="Other"
+                    android:textStyle="bold"/>
             </RadioGroup>
 
             <View
@@ -85,6 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SELECT AGE"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"/>
             <DatePicker
@@ -92,7 +97,8 @@
                 android:layout_height="match_parent"
                 android:datePickerMode="spinner"
                 android:calendarViewShown="false"
-                android:spinnersShown="true"/>
+                android:spinnersShown="true"
+                android:textStyle="bold"/>
 
 
 
@@ -106,6 +112,7 @@
             android:elevation="10dp"
             android:onClick="callNextSignupPage"
             android:text="NEXT"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:transitionName="transition_next_btn" />

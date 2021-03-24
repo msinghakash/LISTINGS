@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LISTINGS">
-        <activity android:name="Login_Signup.SetNewPassword"></activity>
+        <activity android:name="Login_Signup.ForgetPasswordUpdateSuccessfulMessageDisplay"></activity>
+        <activity android:name="Login_Signup.SetNewPassword" />
         <activity android:name="Login_Signup.ForgotPassword_Options" />
         <activity android:name="Login_Signup.ForgotPassword" />
         <activity android:name="Login_Signup.OTP_verification_screen" />
@@ -18,7 +19,7 @@
         <activity android:name="Login_Signup.SignUp" />
         <activity android:name="Login_Signup.Login" />
         <activity android:name="LoginSignUp.LoginSignUpScreen" />
-        <activity android:name=".LoginScreen" />
+        <activity android:name=".FirstAppScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

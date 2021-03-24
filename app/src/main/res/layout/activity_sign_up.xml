@@ -55,7 +55,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text">
+                android:inputType="text"
+                android:textStyle="bold">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +76,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress">
+                    android:inputType="textEmailAddress"
+                    android:textStyle="bold">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +97,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text">
+                    android:inputType="text"
+                    android:textStyle="bold">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +118,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword">
+                    android:inputType="textPassword"
+                    android:textStyle="bold">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -133,6 +137,7 @@
             android:elevation="10dp"
             android:onClick="callNextSignupPage"
             android:text="NEXT"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:transitionName="transition_next_btn" />

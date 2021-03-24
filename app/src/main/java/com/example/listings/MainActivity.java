@@ -47,12 +47,10 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LoginScreen.class);
+                Intent intent = new Intent(MainActivity.this, FirstAppScreen.class);
                 startActivity(intent);
                 finish();
             }
-        }, SPLASH_SCREEN);// This SPLASH_SCREEN represnts the time for which the page will be seen on the screen.
-
-
+        }, SPLASH_SCREEN);// This SPLASH_SCREEN represents the time for which the page will be seen on the screen.
     }
 }

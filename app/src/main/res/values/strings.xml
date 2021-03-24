@@ -13,4 +13,13 @@
     <string name="enter_email_id">Email</string>
     <!-- OTP SCREEN ENTERIES-->
     <string name="OTP_description_text">OTP send on number \n12345</string>
+    <!-- Update Password Screen-->
+    <string name="update_password_title">UPDATE\nPASSWORD</string>
+    <string name="new_credentials">Please enter new credentials</string>
+    <string name="verified">VERIFIED\nENTER NEW PASSWORD</string>
+    <string name="new_password_hint">NEW PASSWORD</string>
+    <string name="confirm_password_hint">CONFIRM PASSWORD</string>
+    <string name="update_new_enteries">UPDATE</string>
+    <string name="credentials_updated">NEW\nCREDENTIALS\nUPDATED</string>
+    <string name="credentials_updated_message">Please use new credentials to log in</string>
 </resources>
