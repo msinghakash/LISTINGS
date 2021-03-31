@@ -53,26 +53,26 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/radiogroup"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp
-">
+                android:layout_marginTop="20dp">
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
                     android:textStyle="bold"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
                     android:textStyle="bold"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/others"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Other"
@@ -95,6 +95,7 @@
             <DatePicker
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/select_age"
                 android:datePickerMode="spinner"
                 android:calendarViewShown="false"
                 android:spinnersShown="true"
