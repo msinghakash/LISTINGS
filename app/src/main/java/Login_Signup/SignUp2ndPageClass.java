@@ -51,7 +51,7 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         }
 
         choosenGender = findViewById(radioGroup.getCheckedRadioButtonId());
-        String _gender = choosenGender.getText().toString();// '_' is at the start of the String variable because it is a local String
+        String gender = choosenGender.getText().toString();// '_' is at the start of the String variable because it is a local String
 
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();
@@ -59,6 +59,12 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         //Combining all variables to form date
         String date = day+"/"+month+"/"+year;
 
+        //Getting data from previous activity
+        //Receiving all the data from the previous screen using getintent
+        String _fullName = getIntent().getStringExtra("fullname");
+        String _email = getIntent().getStringExtra("email");
+        String _userName = getIntent().getStringExtra("username");
+        String _password = getIntent().getStringExtra("password");
 
         Intent intent = new Intent(getApplicationContext(), SignUp3rdPageClass.class);
         //Adding Transition
@@ -71,6 +77,15 @@ public class SignUp2ndPageClass extends AppCompatActivity {
 
         // ActivityOptions to transition between Activities using cross-Activity scene animations.
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndPageClass.this, pairs);
+
+        //Passing data to next activity
+        intent.putExtra("gender", gender);
+        intent.putExtra("date", date);
+        intent.putExtra("fullname", _fullName);
+        intent.putExtra("email", _email);
+        intent.putExtra("username", _userName);
+        intent.putExtra("password", _password);
+
         startActivity(intent, options.toBundle()); //options.toBundle() will attach animations to the intent.
     }
 
@@ -82,10 +97,5 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         } else {
             return true;
         }
-    }
-
-    private boolean validateAge()
-    {
-        int userAge = datePicker.getYear();
     }
 }

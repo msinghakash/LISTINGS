@@ -44,10 +44,16 @@ public class SignUp extends AppCompatActivity {
 
     public void callNextSignupPage(View view) {
 
-        if(!validateFullName() | !validateEmail() | !validateUsername() | !validatePassword())
+        if(!validateFullName() | !validateUsername() | !validatePassword())
         {
             return;
         }
+
+
+        String fullname_value = fullname.getEditText().getText().toString().trim();
+        String email_value = email.getEditText().getText().toString().trim();
+        String username_value = username.getEditText().getText().toString().trim();
+        String password_value = password.getEditText().getText().toString().trim();
 
         Intent intent = new Intent(getApplicationContext(), SignUp2ndPageClass.class);
         //Adding Transition
@@ -60,6 +66,12 @@ public class SignUp extends AppCompatActivity {
 
         // ActivityOptions to transition between Activities using cross-Activity scene animations.
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+        //Passing data to next activity
+        intent.putExtra("fullName", fullname_value);
+        intent.putExtra("email", email_value);
+        intent.putExtra("username", username_value);
+        intent.putExtra("password", password_value);
+
         startActivity(intent, options.toBundle()); //options.toBundle() will attach animations to the intent.
     }
 
@@ -88,13 +100,13 @@ public class SignUp extends AppCompatActivity {
         if (email_value.isEmpty()) {
             email.setError("Please enter name!");
             return false;
-        } else if (email_value.contains(" ")) {
+        } /*else if (email_value.contains(" ")) {
             email.setError("Please enter without space!");
             return false;
         } else if (email_value.matches(validate_email)) {
             email.setError("Username cannot be more than 30 letters!");
             return false;
-        } else {
+        }*/ else {
             //This portion of the code will be executed when the full name is not empty
             //This is going to be the true statement case
             email.setError(null);//This will remove the error
@@ -108,7 +120,7 @@ public class SignUp extends AppCompatActivity {
         String username_value = username.getEditText().getText().toString().trim();
 
         if (username_value.isEmpty()) {
-            username.setError("Please enter name!");
+            username.setError("Please enter username!");
             return false;
         } else if (username_value.contains(" ")) {
             username.setError("Please enter without space!");
@@ -128,7 +140,7 @@ public class SignUp extends AppCompatActivity {
         String validate_password = "^(?=.*[A-Za-z])(?=.*\\\\d)(?=.*[$@$!%*#?&])[A-Za-z\\\\d$@$!%*#?&]{8,}$";
 
         if (password_value.isEmpty()) {
-            password.setError("Please enter name!");
+            password.setError("Please enter password!");
             return false;
         } else if (password_value.contains(" ")) {
             password.setError("Please enter without space!");

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scroll_view_signup_page3"
     tools:context="Login_Signup.SignUp3rdPageClass"
     android:background="@color/yellow"
     android:padding="10dp">
@@ -42,6 +43,7 @@
             <com.hbb20.CountryCodePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/country_code_picker"
                 app:ccp_autoDetectCountry="true"
                 app:ccp_showFlag="true"
                 app:ccp_showNameCode="true"
@@ -51,6 +53,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/phone_number_in_signup"
                 android:hint="@string/enter_phone_number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:hintTextColor="@color/black"
@@ -61,6 +64,7 @@
                 app:boxStrokeColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPhoneNum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
