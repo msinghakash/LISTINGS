@@ -1,5 +1,6 @@
 package Login_Signup;
 
+import Database.UserHelperClass;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,12 +21,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 public class OTP_verification_screen extends AppCompatActivity {
 
     PinView pinEntered;
     String gettingSystemCode;
+
+    String fullName, phoneNumber, email, userName, password, date, gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +42,15 @@ public class OTP_verification_screen extends AppCompatActivity {
 
         pinEntered = findViewById(R.id.pin_entered);
 
-        String _phoneNumber = getIntent().getStringExtra("phone");
+        fullName = getIntent().getStringExtra("fullname");
+        email = getIntent().getStringExtra("email");
+        userName = getIntent().getStringExtra("username");
+        password = getIntent().getStringExtra("password");
+        phoneNumber = getIntent().getStringExtra("phone");
+        gender = getIntent().getStringExtra("gender");
+        date = getIntent().getStringExtra("date");
 
-        sendOTPToUser(_phoneNumber);
+        sendOTPToUser(phoneNumber);
 
     }
 
@@ -98,11 +109,11 @@ public class OTP_verification_screen extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(OTP_verification_screen.this,"VERIFIED", Toast.LENGTH_LONG).show();
-
+                            Log.d("OTP Verification", "Checking the verified part");
+                            //below function will store the data into the firebase.
+                            storingNewUserData();
                         } else {
-                            // Sign in failed, display a message and update the UI
-
+                            // Sign in failed, display a message
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(OTP_verification_screen.this,"ERROR IN VERIFICATION", Toast.LENGTH_LONG).show();
                             }
@@ -111,12 +122,24 @@ public class OTP_verification_screen extends AppCompatActivity {
                 });
     }
     //This method will run when the user will press VERIFY button
-    public void getNextScreenFromOTP(View view)
+    public void callNextScreenFromOTP(View view)
     {
         String otpByuser = pinEntered.getText().toString();
         if(!otpByuser.isEmpty())
         {
             verifyCode(otpByuser);
         }
+    }
+
+    public void storingNewUserData()
+    {
+        Log.d("OTP Verification","Entered storing new data of user!!!!!!!!");
+        Toast.makeText(OTP_verification_screen.this,"VERIFIED", Toast.LENGTH_LONG).show();
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();//This 'rootNode' will start pointing to the database.
+        DatabaseReference reference = rootNode.getReference("Users");//This will point to all the reference/tables in the database.
+
+        UserHelperClass addNewUser = new UserHelperClass(fullName, email, userName, password, date, gender, phoneNumber);
+
+        reference.child(phoneNumber).setValue(addNewUser);
     }
 }
