@@ -57,7 +57,7 @@ public class SignUp3rdPageClass extends AppCompatActivity {
         String code = String.valueOf(countryCodePicker.getSelectedCountryCodeAsInt());
         String _phone = "+"+code+_phoneNumber_entered;
 
-        Intent intent = new Intent(getApplicationContext(), OTP_verification_screen.class);
+        Intent intent = new Intent(getApplicationContext(), OTP_temp.class);
 
         //Passing data to next activity
         intent.putExtra("gender", _gender);

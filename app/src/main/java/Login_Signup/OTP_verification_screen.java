@@ -1,3 +1,4 @@
+/*
 package Login_Signup;
 
 import Database.UserHelperClass;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -56,21 +58,26 @@ public class OTP_verification_screen extends AppCompatActivity {
 
     private void sendOTPToUser(String phoneNumber)
     {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+        PhoneAuthOptions op = PhoneAuthOptions.newBuilder(FirebaseAuth.getInstance()).set;
+        */
+/*PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phoneNumber, //PhoneNumber to Verify
                 60,        //Timeout duration
                 TimeUnit.SECONDS,//Unit of timeout
                 TaskExecutors.MAIN_THREAD,//Activity(gor call back binding)
-                mCallbacks);//OnVerificationChangedCallbacks
+                mCallbacks);//OnVerificationChangedCallbacks*//*
+
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                 //Below function 'onCodeSent' is overridden because we want to create the facility of Manual input of OTP as well
-                /*The code(OTP) passed is already in String s variable passed as a parameter in the function.
+                */
+/*The code(OTP) passed is already in String s variable passed as a parameter in the function.
                 Therefore, to get that system generated code(OTP) we have to make a variable
                 And we have done that in the variable name assigned at the top as 'gettingSystemCode'
-                 */
+                 *//*
+
                 @Override
                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                     super.onCodeSent(s, forceResendingToken);
@@ -142,4 +149,4 @@ public class OTP_verification_screen extends AppCompatActivity {
 
         reference.child(phoneNumber).setValue(addNewUser);
     }
-}
+}*/

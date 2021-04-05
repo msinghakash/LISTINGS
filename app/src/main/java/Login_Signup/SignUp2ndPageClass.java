@@ -61,7 +61,7 @@ public class SignUp2ndPageClass extends AppCompatActivity {
 
         //Getting data from previous activity
         //Receiving all the data from the previous screen using getintent
-        String _fullName = getIntent().getStringExtra("fullname");
+        String _fullName = getIntent().getStringExtra("fullName");
         String _email = getIntent().getStringExtra("email");
         String _userName = getIntent().getStringExtra("username");
         String _password = getIntent().getStringExtra("password");

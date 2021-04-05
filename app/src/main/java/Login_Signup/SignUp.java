@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
         }
 
 
-        String fullname_value = fullname.getEditText().getText().toString().trim();
+        String fullname_value = fullname.getEditText().getText().toString();
         String email_value = email.getEditText().getText().toString().trim();
         String username_value = username.getEditText().getText().toString().trim();
         String password_value = password.getEditText().getText().toString().trim();
