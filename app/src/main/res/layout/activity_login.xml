@@ -37,42 +37,57 @@
             android:orientation="vertical"
             android:layout_marginTop="80dp">
 
+            <com.hbb20.CountryCodePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_country_code_picker"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="true"
+                app:ccp_showFullName="true"
+                android:background="@drawable/black_border"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/phone_number_in_login"
+                android:hint="@string/enter_phone_number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/enter_username"
                 app:hintTextColor="@color/black"
-
-                app:boxStrokeWidthFocused="2dp"
+                android:textColorHint="@color/black"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
-                android:inputType="text">
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/muli"
-                    android:inputType="text"
-                    android:textColor="@color/black" />
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:textStyle="bold">
+
+                </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/enter_password"
-
+                android:textColorHint="@color/black"
+                android:id="@+id/login_password"
                 app:hintTextColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/black">
+                app:endIconTint="@color/black"
+                app:boxStrokeColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/muli"
                     android:inputType="textPassword"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
@@ -110,6 +125,7 @@
                 android:layout_marginTop="3dp"
                 android:background="@color/black"
                 android:text="@string/login"
+                android:onClick="userLogin"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -123,8 +139,6 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
-
-
 
         </LinearLayout>
 

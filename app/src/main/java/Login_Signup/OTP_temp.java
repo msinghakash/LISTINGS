@@ -34,7 +34,6 @@ public class OTP_temp extends AppCompatActivity {
 
     private static final String TAG = "OTP_temp";
     PinView pinEntered;
-    String gettingSystemCode = null;
 
     String fullName, phoneNumber, email, userName, password, date, gender,otp;
     private FirebaseAuth mAuth;
