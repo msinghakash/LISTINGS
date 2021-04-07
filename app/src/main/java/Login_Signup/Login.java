@@ -2,15 +2,22 @@ package Login_Signup;
 
 import MainScreen.MainScreenOfApp;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.listings.FirstAppScreen;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -42,6 +49,15 @@ public class Login extends AppCompatActivity {
     }
 
     public void userLogin(View view) {
+
+        //Checking connection to the internet
+        if(!isConnected(Login.this))
+        {
+            Log.d("Login.java", "userLogin: Entered to check if connected or not");
+            showCustomDialogue();
+        }
+
+
         if (!validateLoginPhoneNumber() | !validateLoginPassword()) {
             Log.d("Login", "Entering Empty");
             return;
@@ -101,6 +117,44 @@ public class Login extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void showCustomDialogue() {
+
+        Log.d("Login.java", "showCustomDialogue: Entered showCustomDialogue");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+        builder.setMessage("Please connect to the internet").setCancelable(false).setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                startActivity(new Intent(getApplicationContext(), FirstAppScreen.class));
+                finish();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    private boolean isConnected(Login login)
+    {
+        Log.d("Login.java", "isConnected: Entered isConnected method");
+        ConnectivityManager connectivityManager = (ConnectivityManager) login.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo wifiConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        if((wifiConnection != null && wifiConnection.isConnected()) || (mobileConnection != null && mobileConnection.isConnected()))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     private Boolean validateLoginPhoneNumber() {
