@@ -3,6 +3,7 @@ package Login_Signup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,13 +36,14 @@ public class OTP_temp extends AppCompatActivity {
     private static final String TAG = "OTP_temp";
     PinView pinEntered;
 
-    String fullName, phoneNumber, email, userName, password, date, gender,otp;
+    String fullName, phoneNumber, email, userName, password, date, gender, otp, stepAfterVerificationofPhoneNumber;
     private FirebaseAuth mAuth;
 
 
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,7 @@ public class OTP_temp extends AppCompatActivity {
         phoneNumber = getIntent().getStringExtra("phone");
         gender = getIntent().getStringExtra("gender");
         date = getIntent().getStringExtra("date");
+        stepAfterVerificationofPhoneNumber = getIntent().getStringExtra("stepAfterVerificationofPhoneNumber");
 
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
@@ -141,7 +144,7 @@ public class OTP_temp extends AppCompatActivity {
     public void callNextScreenFromOTP(View view) {
         String otpByuser = pinEntered.getText().toString();
         if (!otpByuser.isEmpty()) {
-            verifyPhoneNumberWithCode(mVerificationId,otpByuser);
+            verifyPhoneNumberWithCode(mVerificationId, otpByuser);
         }
     }
 
@@ -158,7 +161,7 @@ public class OTP_temp extends AppCompatActivity {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(phoneNumber)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setTimeout(10L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .setForceResendingToken(token)     // ForceResendingToken from callbacks
@@ -178,13 +181,22 @@ public class OTP_temp extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
 
                             FirebaseUser user = task.getResult().getUser();
-                            storingNewUserData();
+
+                            if (stepAfterVerificationofPhoneNumber.equals("updatePassword")) {
+                                Log.d("OTP_temp", "!!!!!onComplete: Entered the if statement!!!!!");
+                                updateTheUsersData();
+                            } else {
+                                storingNewUserData();
+                                Intent intent = new Intent(getApplicationContext(), Login.class);
+                                startActivity(intent);
+                                finish();
+                            }
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
-                                Toast.makeText(getApplicationContext(),"ERROR IN VERIFICATION", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "ERROR IN VERIFICATION", Toast.LENGTH_LONG).show();
                             }
                         }
                     }
@@ -196,15 +208,22 @@ public class OTP_temp extends AppCompatActivity {
 
     }
 
-    public void storingNewUserData()
-    {
-        Log.d("OTP Verification","Entered storing new data of user!!!!!!!!");
-        Toast.makeText(getApplicationContext(),"VERIFIED", Toast.LENGTH_LONG).show();
+    public void storingNewUserData() {
+        Log.d("OTP Verification", "Entered storing new data of user!!!!!!!!");
+        Toast.makeText(getApplicationContext(), "VERIFIED", Toast.LENGTH_LONG).show();
         FirebaseDatabase rootNode = FirebaseDatabase.getInstance();//This 'rootNode' will start pointing to the database.
         DatabaseReference reference = rootNode.getReference("Users");//This will point to all the reference/tables in the database.
 
         UserHelperClass addNewUser = new UserHelperClass(fullName, email, userName, password, date, gender, phoneNumber);
 
         reference.child(phoneNumber).setValue(addNewUser);
+    }
+    public void updateTheUsersData()
+    {
+        Log.d("OTP_temp", "!!!!!!updateTheUsersData: Entered updateTheUsersData method!!!!!!!!!");
+        Intent intent = new Intent(getApplicationContext(), SetNewPassword.class);
+        intent.putExtra("phoneNumber", phoneNumber);
+        startActivity(intent);
+        finish();
     }
 }

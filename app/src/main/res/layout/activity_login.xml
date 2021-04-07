@@ -27,6 +27,7 @@
             android:layout_marginTop="10dp"
             android:fontFamily="@font/aclonica"
             android:text="@string/login"
+            android:id="@+id/login_title"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="80dp" />
@@ -96,22 +97,13 @@
                 android:layout_marginTop="10dp">
 
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
-                    android:text="@string/remember_me"
-                    android:buttonTint="@color/black"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"/>
 
                 <Button
                     android:id="@+id/forgot_password"
-                    android:onClick="callForgotPasswordPage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/forgot_password"
+                    android:onClick="callForgotPasswordPage"
                     android:background="#00000000"
                     android:textStyle="bold"
                     android:layout_alignParentEnd="true"

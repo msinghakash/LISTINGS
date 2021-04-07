@@ -188,4 +188,11 @@ public class Login extends AppCompatActivity {
             return true;
         }
     }
+
+    public void callForgotPasswordPage(View view)
+    {
+        Log.d("Login.java", "callForgotPasswordPage: Entered method");
+        Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
+        startActivity(intent);
+    }
 }
