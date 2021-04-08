@@ -1,4 +1,4 @@
-package Database;
+package DatabaseAndConnectors;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

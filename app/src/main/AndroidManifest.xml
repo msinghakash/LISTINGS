@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LISTINGS">
-        <activity android:name="MainScreen.MainScreenOfApp"></activity>
+        <activity android:name="MainScreen.AboutScreen"></activity>
+        <activity android:name="MainScreen.SellScreen" />
+        <activity android:name="MainScreen.userInfo" />
+        <activity android:name="MainScreen.MainScreenOfApp" />
         <activity android:name="Login_Signup.OTP_temp" />
         <activity android:name="Login_Signup.ForgetPasswordUpdateSuccessfulMessageDisplay" />
         <activity android:name="Login_Signup.SetNewPassword" />

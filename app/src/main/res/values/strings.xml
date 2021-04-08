@@ -22,4 +22,7 @@
     <string name="update_new_enteries">UPDATE</string>
     <string name="credentials_updated">NEW\nCREDENTIALS\nUPDATED</string>
     <string name="credentials_updated_message">Please use new credentials to log in</string>
+    <!-- Navigation Drawer String-->
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 </resources>

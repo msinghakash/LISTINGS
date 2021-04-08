@@ -1,4 +1,4 @@
-package Database;
+package DatabaseAndConnectors;
 
 public class UserHelperClass {
 

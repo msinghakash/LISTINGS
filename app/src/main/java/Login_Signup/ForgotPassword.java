@@ -1,7 +1,6 @@
 package Login_Signup;
 
-import Database.CheckInternetConnection;
-import MainScreen.MainScreenOfApp;
+import DatabaseAndConnectors.CheckInternetConnection;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;

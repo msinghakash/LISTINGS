@@ -1,6 +1,6 @@
 package Login_Signup;
 
-import Database.CheckInternetConnection;
+import DatabaseAndConnectors.CheckInternetConnection;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
