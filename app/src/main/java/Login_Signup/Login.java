@@ -98,6 +98,7 @@ public class Login extends AppCompatActivity {
                         String gender = snapshot.child(_phone).child("gender").getValue(String.class);
 
                         Intent intent = new Intent(getApplicationContext(), MainScreenOfApp.class);
+                        intent.putExtra("phone", _phone);
                         startActivity(intent);
                     } else {
                         Log.d("Test Message", get_saved_password_of_user);

@@ -1,15 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
     tools:context="MainScreen.SellScreen">
 
-    <TextView
+    <Button
+        android:id="@+id/button_choose_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose File"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button_image_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="UPLOAD"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/edit_text_image_file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/button_choose_image"
+        android:hint="Enter File Name"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"/>
+
+    <ImageView
+        android:id="@+id/image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="sell screen"
-        android:gravity="center"/>
+        android:layout_above="@+id/progress_bar"
+        android:layout_below="@+id/text_view_image_description"
+        android:layout_marginTop="10dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_image_upload"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+
+    <EditText
+        android:id="@+id/text_view_image_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:hint="Enter the description"
+        android:textColorHint="@color/black"/>
+
+    <TextView
+        android:id="@+id/text_view_show_uploads"
+        android:layout_width="124dp"
+        android:layout_height="33dp"
+        android:layout_alignBaseline="@+id/button_image_upload"
+        android:layout_marginStart="33dp"
+        android:layout_toEndOf="@+id/button_image_upload"
+        android:gravity="center"
+        android:text="Show Uploads"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>

@@ -91,7 +91,9 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
                 startActivity(intent);
                  break;
             case  R.id.nav_sell:
+                String _phone = getIntent().getStringExtra("phone");
                 Intent intent1 = new Intent(getApplicationContext(), SellScreen.class);
+                intent1.putExtra("phone", _phone);
                 startActivity(intent1);
                 break;
             case R.id.nav_logout:
