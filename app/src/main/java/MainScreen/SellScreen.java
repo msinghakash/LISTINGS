@@ -39,8 +39,9 @@ public class SellScreen extends AppCompatActivity {
 
     private Button mButtonChooseImage;
     private Button mButtonImageUpload;
-    private TextView mTextViewShowUploads;
+
     private EditText mImageTextDescription;
+    private EditText mSellingInformationEmail;
     private EditText mEditTextFileName;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
@@ -58,8 +59,9 @@ public class SellScreen extends AppCompatActivity {
 
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonImageUpload = findViewById(R.id.button_image_upload);
-        mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
+
         mImageTextDescription = findViewById(R.id.text_view_image_description);
+        mSellingInformationEmail = findViewById(R.id.selling_information_email);
         mEditTextFileName = findViewById(R.id.edit_text_image_file_name);
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
@@ -80,12 +82,6 @@ public class SellScreen extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                uploadFile();
-
-           }
-       });
-       mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
 
            }
        });
@@ -138,9 +134,11 @@ public class SellScreen extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Uri> task) {
                             if (task.isSuccessful()) { Uri downloadUri = task.getResult();
-                                Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), downloadUri.toString(), mImageTextDescription.getText().toString());
+                                Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), downloadUri.toString(), mImageTextDescription.getText().toString(), mSellingInformationEmail.getText().toString().trim());
                                 mDatabaseRef.push().setValue(upload);
                                 Toast.makeText(SellScreen.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(SellScreen.this, MainScreenOfApp.class);
+                                startActivity(intent);
                             }
                             else { Toast.makeText(SellScreen.this, "Upload Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }

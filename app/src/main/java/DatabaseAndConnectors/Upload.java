@@ -1,26 +1,35 @@
 package DatabaseAndConnectors;
 
+import com.google.firebase.database.Exclude;
+
 public class Upload {
 
     private String mName;
     private String mImageUrl;
     private String mImageDescription;
+    private String mSellingInformationEmail;
+    private String mKey;
+
 
     public Upload() {
         //Empty Constructor needed because we are working with Firebase
     }
 
     //Below constructor will take the name and URL
-    public Upload(String name, String imageurl, String imagedescription) {
+    public Upload(String name, String imageurl, String imagedescription, String informationemail) {
         if (name.trim().equals("")) {
-            name = "No Name";
+            name = "Name not provided";
         }
         if (imagedescription.trim().equals("")) {
-            imagedescription = "No Description Provided";
+            imagedescription = "Description/Price Tag not provided";
+        }
+        if (informationemail.trim().equals("")) {
+            informationemail = "Phone Number/Email Provided";
         }
         mName = name;
         mImageUrl = imageurl;
         mImageDescription = imagedescription;
+        mSellingInformationEmail = informationemail;
     }
 
     //Putting Getter and Setter
@@ -46,5 +55,19 @@ public class Upload {
 
     public void setImageDescription(String imageDescription) {
         mImageDescription = imageDescription;
+    }
+    public String getSellingInformationEmail() {
+        return mSellingInformationEmail;
+    }
+
+    public void setSellingInformationEmail(String informationEmail) {
+        mSellingInformationEmail = informationEmail;
+    }
+    @Exclude
+    public String getKey(){
+        return mKey;}
+    @Exclude
+    public void setKey(String key){
+        mKey = key;
     }
 }

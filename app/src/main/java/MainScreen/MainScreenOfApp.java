@@ -1,6 +1,8 @@
 package MainScreen;
 
-import DatabaseAndConnectors.Adapter;
+
+import DatabaseAndConnectors.ImageAdapter;
+import DatabaseAndConnectors.Upload;
 import Login_Signup.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -17,19 +20,30 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.listings.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainScreenOfApp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainScreenOfApp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ImageAdapter.OnItemClickListner {
 
 
     //Variables-->RecyclerView
-    RecyclerView itemsPresentInFirebase;
-    List<String> titles;
-    List<Integer> images;
-    Adapter adapter;
+    private RecyclerView mRecyclerView;
+    private ImageAdapter mAdapter;
+
+    private FirebaseStorage mStorage;
+    private DatabaseReference mDatabaseRef;
+    private ValueEventListener mDBListner;
+    private List<Upload> mUploads;
 
     //Variables-->NavigationDrawer
     DrawerLayout drawerLayout;
@@ -58,28 +72,71 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         //------------RecyclerView----------
-        itemsPresentInFirebase = findViewById(R.id.items_in_firebase);
+        mRecyclerView = findViewById(R.id.items_in_firebase);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Here populate the list view with data;
-        titles =  new ArrayList<>();
-        images= new ArrayList<>();
+        mUploads = new ArrayList<>();
 
-        titles.add("Cross Image");
-        titles.add("Brunei");
-        titles.add("Chile");
-        titles.add("Fiji");
+        mAdapter = new ImageAdapter(MainScreenOfApp.this, mUploads);
+        mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnItemClickListner(MainScreenOfApp.this);
 
-        images.add(R.drawable.cross_image);
-        images.add(R.drawable.flag_brunei);
-        images.add(R.drawable.flag_chile);
-        images.add(R.drawable.flag_fiji);
+        mStorage = FirebaseStorage.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
-        adapter = new Adapter(this, titles, images);
+        mDBListner = mDatabaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //Clearing the list before loading all the data again so that their is no duplication of data
+                mUploads.clear();
+
+                //Looping through all the images in database reference and getting snapshot of each children
+                for(DataSnapshot postSnapshot : snapshot.getChildren())
+                {
+                    Upload upload = postSnapshot.getValue(Upload.class);
+                    upload.setKey(postSnapshot.getKey());
+                    mUploads.add(upload);
+                }
+
+                mAdapter.notifyDataSetChanged();//This will update the recycler view after it is filled with the items.
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(MainScreenOfApp.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        /*
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         itemsPresentInFirebase.setLayoutManager(gridLayoutManager);
-        itemsPresentInFirebase.setAdapter(adapter);
+        itemsPresentInFirebase.setAdapter(adapter);*/
+    }
 
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
+
+        Upload selectedItem = mUploads.get(position);
+        String selectedKey = selectedItem.getKey();//Getting the key of the selected item
+
+        StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
+        imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                mDatabaseRef.child(selectedKey).removeValue();
+                Toast.makeText(MainScreenOfApp.this, "Item Deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -88,6 +145,7 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         {
             case R.id.nav_userInfo:
                 Intent intent = new Intent(getApplicationContext(), userInfo.class);
+                intent.putExtra("phone", _phone);
                 startActivity(intent);
                  break;
             case  R.id.nav_sell:
@@ -120,5 +178,12 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        mDatabaseRef.removeEventListener(mDBListner);
     }
 }
