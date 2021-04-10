@@ -144,14 +144,15 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         switch (item.getItemId())
         {
             case R.id.nav_userInfo:
+                String _phone = getIntent().getStringExtra("phone");
                 Intent intent = new Intent(getApplicationContext(), userInfo.class);
                 intent.putExtra("phone", _phone);
                 startActivity(intent);
                  break;
             case  R.id.nav_sell:
-                String _phone = getIntent().getStringExtra("phone");
+                String userphone = getIntent().getStringExtra("phone");
                 Intent intent1 = new Intent(getApplicationContext(), SellScreen.class);
-                intent1.putExtra("phone", _phone);
+                intent1.putExtra("phone", userphone);
                 startActivity(intent1);
                 break;
             case R.id.nav_logout:

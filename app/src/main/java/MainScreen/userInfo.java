@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.listings.R;
@@ -22,6 +23,15 @@ public class userInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
+
+        TextView usersname, usersphonenumber, usersemail, usersusername, userspassword;
+
+
+        usersname = findViewById(R.id.usersname);
+        usersphonenumber = findViewById(R.id.usersphonenumber);
+        usersemail = findViewById(R.id.usersemail);
+        usersusername = findViewById(R.id.usersusername);
+        userspassword = findViewById(R.id.userspassword);
 
 
         String _phone = getIntent().getStringExtra("phone");
@@ -42,7 +52,11 @@ public class userInfo extends AppCompatActivity {
                         String dob = snapshot.child(_phone).child("date").getValue(String.class);
                         String gender = snapshot.child(_phone).child("gender").getValue(String.class);
 
-
+                        usersname.setText(fullName);
+                        usersphonenumber.setText(_phone);
+                        usersemail.setText(email);
+                        usersusername.setText(userName);
+                        userspassword.setText(get_saved_password_of_user);
                     }
                 else {
                     Toast.makeText(userInfo.this, "User does not exist", Toast.LENGTH_LONG).show();
@@ -59,4 +73,3 @@ public class userInfo extends AppCompatActivity {
         });
     }
     }
-}
