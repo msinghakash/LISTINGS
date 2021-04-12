@@ -79,7 +79,7 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         //------------RecyclerView----------
         mRecyclerView = findViewById(R.id.items_in_firebase);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
         mUploads = new ArrayList<>();
 

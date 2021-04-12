@@ -51,7 +51,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         holder.textViewLocation.setText(uploadCurrent.getImageLocation());
         Glide.with(mContext)
                 .load(uploadCurrent.getImageUrl())
-                .apply(new RequestOptions().override(500,500))
+                .apply(new RequestOptions().override(1280,720))
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                 .into(holder.imageView);
