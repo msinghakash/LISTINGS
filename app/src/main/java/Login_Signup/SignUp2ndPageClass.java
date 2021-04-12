@@ -36,7 +36,7 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up2nd_page_class);
 
         //Hooks
-        backBtn = findViewById(R.id.signup_back_button);
+
         next = findViewById(R.id.signup_next_btn);
         titleText = findViewById(R.id.signup_title_text);
         radioGroup = findViewById(R.id.radiogroup);
@@ -67,16 +67,6 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         String _password = getIntent().getStringExtra("password");
 
         Intent intent = new Intent(getApplicationContext(), SignUp3rdPageClass.class);
-        //Adding Transition
-        // 3 below represents the total number of transitions we want to perform
-        Pair[] pairs = new Pair[3];
-
-        pairs[0] = new Pair<View, String>(backBtn, "transition_back_button");
-        pairs[1] = new Pair<View, String>(titleText, "transition_title_text");
-        pairs[2] = new Pair<View, String>(next, "transition_next_btn");
-
-        // ActivityOptions to transition between Activities using cross-Activity scene animations.
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndPageClass.this, pairs);
 
         //Passing data to next activity
         intent.putExtra("gender", gender);
@@ -86,7 +76,7 @@ public class SignUp2ndPageClass extends AppCompatActivity {
         intent.putExtra("username", _userName);
         intent.putExtra("password", _password);
 
-        startActivity(intent, options.toBundle()); //options.toBundle() will attach animations to the intent.
+        startActivity(intent); //options.toBundle() will attach animations to the intent.
     }
 
     private boolean validateGender() {

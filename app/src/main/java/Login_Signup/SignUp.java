@@ -31,7 +31,6 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         //Hooks for transition/animation
-        backBtn = findViewById(R.id.signup_back_button);
         next = findViewById(R.id.signup_next_btn);
         titleText = findViewById(R.id.signup_title_text);
 
@@ -58,11 +57,11 @@ public class SignUp extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SignUp2ndPageClass.class);
         //Adding Transition
         // 3 below represents the total number of transitions we want to perform
-        Pair[] pairs = new Pair[3];
+        Pair[] pairs = new Pair[2];
 
-        pairs[0] = new Pair<View, String>(backBtn, "transition_back_button");
-        pairs[1] = new Pair<View, String>(titleText, "transition_title_text");
-        pairs[2] = new Pair<View, String>(next, "transition_next_btn");
+
+        pairs[0] = new Pair<View, String>(titleText, "transition_title_text");
+        pairs[1] = new Pair<View, String>(next, "transition_next_btn");
 
         // ActivityOptions to transition between Activities using cross-Activity scene animations.
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);

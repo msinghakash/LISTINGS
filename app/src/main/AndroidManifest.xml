@@ -15,11 +15,7 @@
         <activity android:name="MainScreen.SellScreen" />
         <activity android:name="MainScreen.userInfo" />
         <activity android:name="MainScreen.MainScreenOfApp" />
-        <activity android:name="Login_Signup.OTP_temp" />
-        <activity android:name="Login_Signup.ForgetPasswordUpdateSuccessfulMessageDisplay" />
-        <activity android:name="Login_Signup.SetNewPassword" />
-        <activity android:name="Login_Signup.ForgotPassword_Options" />
-        <activity android:name="Login_Signup.ForgotPassword" />
+        <activity android:name="Login_Signup.OTP_verification_screen" />
         <activity android:name="Login_Signup.OTP_verification_screen" />
         <activity android:name="Login_Signup.SignUp3rdPageClass" />
         <activity android:name="Login_Signup.SignUp2ndPageClass" />

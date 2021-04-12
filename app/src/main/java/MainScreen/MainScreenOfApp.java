@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -33,7 +34,9 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainScreenOfApp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ImageAdapter.OnItemClickListner {
+public class MainScreenOfApp extends AppCompatActivity implements NavigationView.
+        OnNavigationItemSelectedListener,
+        ImageAdapter.OnItemClickListner {
 
 
     //Variables-->RecyclerView
@@ -46,9 +49,10 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
     private List<Upload> mUploads;
 
     //Variables-->NavigationDrawer
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,19 +66,20 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         toolbar = findViewById(R.id.toolBar);
 
 
-
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
         //Setting toolbar as ActionBar
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Navigation Drawer Menu
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         //------------RecyclerView----------
         mRecyclerView = findViewById(R.id.items_in_firebase);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         mUploads = new ArrayList<>();
 
@@ -93,8 +98,7 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
                 mUploads.clear();
 
                 //Looping through all the images in database reference and getting snapshot of each children
-                for(DataSnapshot postSnapshot : snapshot.getChildren())
-                {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Upload upload = postSnapshot.getValue(Upload.class);
                     upload.setKey(postSnapshot.getKey());
                     mUploads.add(upload);
@@ -111,11 +115,6 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
 
             }
         });
-
-        /*
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
-        itemsPresentInFirebase.setLayoutManager(gridLayoutManager);
-        itemsPresentInFirebase.setAdapter(adapter);*/
     }
 
     @Override
@@ -141,15 +140,14 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.nav_userInfo:
                 String _phone = getIntent().getStringExtra("phone");
                 Intent intent = new Intent(getApplicationContext(), userInfo.class);
                 intent.putExtra("phone", _phone);
                 startActivity(intent);
-                 break;
-            case  R.id.nav_sell:
+                break;
+            case R.id.nav_sell:
                 String userphone = getIntent().getStringExtra("phone");
                 Intent intent1 = new Intent(getApplicationContext(), SellScreen.class);
                 intent1.putExtra("phone", userphone);
@@ -169,22 +167,30 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
         return true;
     }
 
-    public void onBackPressed()
-    {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         mDatabaseRef.removeEventListener(mDBListner);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        toggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        toggle.onConfigurationChanged(newConfig);
     }
 }

@@ -11,8 +11,6 @@
     <string name="enter_full_name">Full Name</string>
     <string name="enter_phone_number">Phone Number</string>
     <string name="enter_email_id">Email</string>
-    <!-- OTP SCREEN ENTERIES-->
-    <string name="OTP_description_text">OTP send on number \n12345</string>
     <!-- Update Password Screen-->
     <string name="update_password_title">UPDATE\nPASSWORD</string>
     <string name="new_credentials">Please enter new credentials</string>

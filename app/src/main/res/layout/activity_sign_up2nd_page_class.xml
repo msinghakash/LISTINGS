@@ -13,13 +13,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/signup_back_button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="5dp"
-            android:src="@drawable/back_button"
-            android:transitionName="transition_back_button"/>
 
         <TextView
             android:id="@+id/signup_title_text"

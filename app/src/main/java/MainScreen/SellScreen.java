@@ -43,6 +43,7 @@ public class SellScreen extends AppCompatActivity {
     private EditText mImageTextDescription;
     private EditText mSellingInformationEmail;
     private EditText mEditTextFileName;
+    private EditText mImageLocation;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
 
@@ -65,6 +66,7 @@ public class SellScreen extends AppCompatActivity {
         mEditTextFileName = findViewById(R.id.edit_text_image_file_name);
         mImageView = findViewById(R.id.image_view);
         mProgressBar = findViewById(R.id.progress_bar);
+        mImageLocation = findViewById(R.id.text_view_image_location);
 
         String _phone = getIntent().getStringExtra("phone");
 
@@ -134,7 +136,7 @@ public class SellScreen extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Uri> task) {
                             if (task.isSuccessful()) { Uri downloadUri = task.getResult();
-                                Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), downloadUri.toString(), mImageTextDescription.getText().toString(), mSellingInformationEmail.getText().toString().trim());
+                                Upload upload = new Upload(mEditTextFileName.getText().toString().trim(), downloadUri.toString(), mImageTextDescription.getText().toString(), mSellingInformationEmail.getText().toString().trim(), mImageLocation.getText().toString());
                                 mDatabaseRef.push().setValue(upload);
                                 Toast.makeText(SellScreen.this, "Upload Successful", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(SellScreen.this, MainScreenOfApp.class);

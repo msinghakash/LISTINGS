@@ -189,4 +189,8 @@ public class Login extends AppCompatActivity {
             return true;
         }
     }
+    public void callcreateaccount(View view){
+        Intent intent = new Intent(Login.this, SignUp.class);
+        startActivity(intent);
+    }
 }

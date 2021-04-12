@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.ScrollView;
 
 import com.example.listings.R;
@@ -57,7 +56,7 @@ public class SignUp3rdPageClass extends AppCompatActivity {
         String code = String.valueOf(countryCodePicker.getSelectedCountryCodeAsInt());
         String _phone = "+"+code+_phoneNumber_entered;
 
-        Intent intent = new Intent(getApplicationContext(), OTP_temp.class);
+        Intent intent = new Intent(getApplicationContext(), OTP_verification_screen.class);
 
         //Passing data to next activity
         intent.putExtra("gender", _gender);

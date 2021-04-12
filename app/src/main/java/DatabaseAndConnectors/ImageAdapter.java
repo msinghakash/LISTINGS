@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.listings.R;
 import com.squareup.picasso.Picasso;
 
@@ -43,10 +46,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
-
         holder.textViewEmail.setText(uploadCurrent.getSellingInformationEmail());
         holder.textViewDescription.setText(uploadCurrent.getImageDescription());
-        Picasso.with(mContext).load(uploadCurrent.getImageUrl()).fit().centerCrop().into(holder.imageView);
+        holder.textViewLocation.setText(uploadCurrent.getImageLocation());
+        Glide.with(mContext)
+                .load(uploadCurrent.getImageUrl())
+                .apply(new RequestOptions().override(500,500))
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(holder.imageView);
     }
 
     @Override
@@ -61,6 +69,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public TextView textViewEmail;
         public TextView textViewDescription;
         public ImageView imageView;
+        public TextView textViewLocation;
 
         public ImageViewHolder(View itemView)
         {
@@ -69,6 +78,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             imageView = itemView.findViewById(R.id.image_view_upload);
             textViewEmail = itemView.findViewById(R.id.text_image_email);
             textViewDescription = itemView.findViewById(R.id.text_image_description);
+            textViewLocation = itemView.findViewById(R.id.text_image_location);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
@@ -120,3 +130,4 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         mListner = listner;
     }
 }
+

@@ -8,6 +8,7 @@ public class Upload {
     private String mImageUrl;
     private String mImageDescription;
     private String mSellingInformationEmail;
+    private String mImageLocation;
     private String mKey;
 
 
@@ -16,20 +17,24 @@ public class Upload {
     }
 
     //Below constructor will take the name and URL
-    public Upload(String name, String imageurl, String imagedescription, String informationemail) {
+    public Upload(String name, String imageurl, String imagedescription, String informationemail, String imagelocation) {
         if (name.trim().equals("")) {
             name = "Name not provided";
         }
         if (imagedescription.trim().equals("")) {
-            imagedescription = "Description/Price Tag not provided";
+            imagedescription = "Description/Price Tag Not Provided";
         }
         if (informationemail.trim().equals("")) {
-            informationemail = "Phone Number/Email Provided";
+            informationemail = "Phone Number/Email Not Provided";
+        }
+        if (imagelocation.trim().equals("")){
+            imagelocation = "Location Not Provided";
         }
         mName = name;
         mImageUrl = imageurl;
         mImageDescription = imagedescription;
         mSellingInformationEmail = informationemail;
+        mImageLocation = imagelocation;
     }
 
     //Putting Getter and Setter
@@ -62,6 +67,13 @@ public class Upload {
 
     public void setSellingInformationEmail(String informationEmail) {
         mSellingInformationEmail = informationEmail;
+    }
+    public String getImageLocation() {
+        return mImageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        mImageLocation = imageLocation;
     }
     @Exclude
     public String getKey(){
