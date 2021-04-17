@@ -15,8 +15,6 @@
         android:orientation="vertical"
         android:layout_marginTop="30dp">
 
-
-
         <TextView
             android:id="@+id/signup_title_text"
             android:layout_width="wrap_content"
@@ -46,16 +44,17 @@
             app:endIconMode="clear_text"
             app:endIconTint="@color/black"
             app:boxStrokeWidthFocused="2dp"
+                app:startIconDrawable="@drawable/ic_fullname_icon"
             app:boxStrokeColor="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textStyle="bold">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textStyle="bold">
 
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -67,6 +66,7 @@
                 android:textColorHint="@color/black"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
+                app:startIconDrawable="@drawable/ic_email_icon"
                 app:boxStrokeWidthFocused="2dp"
                 app:boxStrokeColor="@color/black">
 
@@ -87,6 +87,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:hintTextColor="@color/black"
                 android:textColorHint="@color/black"
+                app:startIconDrawable="@drawable/ic_person_image"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -110,6 +111,7 @@
                 app:hintTextColor="@color/black"
                 android:textColorHint="@color/black"
                 app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_password_icon"
                 app:endIconTint="@color/black"
                 app:boxStrokeWidthFocused="2dp"
                 android:layout_marginBottom="50dp"

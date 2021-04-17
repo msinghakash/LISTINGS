@@ -57,7 +57,8 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:boxStrokeWidthFocused="2dp"
-                app:boxStrokeColor="@color/black">
+                app:boxStrokeColor="@color/black"
+                app:startIconDrawable="@drawable/ic_password_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editPhoneNum"

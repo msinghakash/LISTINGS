@@ -1,6 +1,5 @@
 package MainScreen;
 
-
 import DatabaseAndConnectors.ImageAdapter;
 import DatabaseAndConnectors.Upload;
 import Login_Signup.Login;
