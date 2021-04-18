@@ -26,45 +26,91 @@
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/image_full_name"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/button_choose_image"
+        android:background="@color/purple_700"
+        android:src="@drawable/ic_fullname_icon"/>
+
     <EditText
         android:id="@+id/edit_text_image_file_name"
         android:layout_width="256dp"
+        android:paddingLeft="2dp"
         android:layout_height="45dp"
-        android:layout_marginStart="7dp"
-        android:layout_toEndOf="@+id/button_choose_image"
+        android:layout_toEndOf="@+id/image_full_name"
         android:background="@color/white"
         android:hint="Enter Product Name"
-        android:textColorHint="@color/black"
         android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textColorHint="@color/black"/>
+
+
+    <ImageView
+        android:id="@+id/image_contact_information"
+        android:layout_width="35dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+       android:layout_below="@+id/button_choose_image"
+        android:background="@color/purple_700"
+        android:src="@drawable/ic_phone_icon" />
 
     <EditText
         android:id="@+id/selling_information_email"
         android:layout_width="390dp"
         android:layout_height="39dp"
-        android:layout_below="@+id/button_choose_image"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/edit_text_image_file_name"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@+id/image_contact_information"
         android:background="@color/white"
-        android:textColorHint="@color/black"
         android:hint="Enter Phone Number/Email Id"
-        android:textColor="@color/black" />
+        android:paddingLeft="2dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <ImageView
+        android:id="@+id/image_description"
+        android:layout_width="35dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/image_contact_information"
+        android:background="@color/purple_700"
+        android:src="@drawable/ic_notepad"/>
 
 
     <EditText
         android:id="@+id/text_view_image_description"
         android:layout_width="394dp"
         android:layout_height="42dp"
-        android:layout_below="@+id/selling_information_email"
+        android:paddingLeft="2dp"
+        android:layout_toEndOf="@+id/image_description"
+        android:layout_below="@+id/image_contact_information"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:hint="Description/Price Tag"
         android:textColor="@color/black"
         android:textColorHint="@color/black"/>
+
+    <ImageView
+        android:id="@+id/image_location"
+        android:layout_width="35dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/image_description"
+        android:background="@color/purple_700"
+        android:src="@drawable/ic_location" />
+
     <EditText
         android:id="@+id/text_view_image_location"
         android:layout_width="394dp"
         android:layout_height="42dp"
         android:layout_below="@+id/text_view_image_description"
+        android:layout_toEndOf="@+id/image_location"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:hint="Location of Product"
@@ -78,7 +124,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/progress_bar"
         android:layout_below="@+id/text_view_image_location"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="9dp"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"

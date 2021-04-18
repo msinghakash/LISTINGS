@@ -4,6 +4,7 @@ import DatabaseAndConnectors.Upload;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -56,6 +57,8 @@ public class SellScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         setContentView(R.layout.activity_sell_screen);
 
         mButtonChooseImage = findViewById(R.id.button_choose_image);

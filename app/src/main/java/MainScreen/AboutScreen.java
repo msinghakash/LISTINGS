@@ -18,7 +18,7 @@ public class AboutScreen extends AppCompatActivity {
 
         aboutInfo = findViewById(R.id.about_info);
 
-        String about = "\nFind products, Upload product, photos, Contact with people\n" +
+        String about = "\nFind products, Upload product photos, Contact with people\n" +
                 "Keeping up with the products and their prices is now easier than ever." +
                 "Click on the Choose Photo, Upload it into the market and find an easy wasy to sell you product and grow your business\n" +
                 "\n" +
