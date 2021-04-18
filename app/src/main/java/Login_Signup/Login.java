@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.listings.FirstAppScreen;
+import com.example.listings.NeedHelp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -102,7 +103,7 @@ public class Login extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         Log.d("Test Message", get_saved_password_of_user);
-                        Toast.makeText(Login.this, "Password does not match", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Password does not match", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
@@ -191,6 +192,11 @@ public class Login extends AppCompatActivity {
     }
     public void callcreateaccount(View view){
         Intent intent = new Intent(Login.this, SignUp.class);
+        startActivity(intent);
+    }
+
+    public void callhelppage(View view) {
+        Intent intent = new Intent(Login.this, NeedHelp.class);
         startActivity(intent);
     }
 }

@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.listings.NeedHelp;
 import com.example.listings.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
@@ -160,6 +161,10 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
             case R.id.nav_about:
                 Intent intent4 = new Intent(getApplicationContext(), AboutScreen.class);
                 startActivity(intent4);
+                break;
+            case R.id.nav_help:
+                Intent intent5 = new Intent(getApplicationContext(), NeedHelp.class);
+                startActivity(intent5);
                 break;
         }
 

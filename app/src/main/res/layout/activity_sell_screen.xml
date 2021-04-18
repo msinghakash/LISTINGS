@@ -33,7 +33,7 @@
         android:layout_marginStart="7dp"
         android:layout_toEndOf="@+id/button_choose_image"
         android:background="@color/white"
-        android:hint="Enter File Name"
+        android:hint="Enter Product Name"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:textStyle="bold" />

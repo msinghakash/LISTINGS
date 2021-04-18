@@ -108,7 +108,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create Account"
+                android:text="Sign Up for Listings"
                 android:textStyle="bold"
                 android:background="#00000000"
                 android:onClick="callcreateaccount"
@@ -116,6 +116,17 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEED HELP?"
+                android:textStyle="bold"
+                android:background="#00000000"
+                android:onClick="callhelppage"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
 
         </LinearLayout>
 
