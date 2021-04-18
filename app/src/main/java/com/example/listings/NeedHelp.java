@@ -57,7 +57,7 @@ public class NeedHelp extends AppCompatActivity {
                 "To know about the application, follow the steps below:\n" +
                 "- Click on the three bar button on the top left side of the screen" +
                 " or Slide from left to right to open the drawer option.\n" +
-                "- Choose the About option from the menus provided." +
+                "- Choose the About option from the menus provided.\n" +
                 "- Read about the application\n\n" +
                 "\n-----HOW TO LOGOUT OF THE APPLICATION-----\n\n" +
                 "- Click on the three bar button on the top left side of the screen" +
