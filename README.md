@@ -11,7 +11,7 @@ The android application helps its users by providing them a platform to Sell/Buy
 
 
 ## **Repository Contents**
-* **/documentation** - Contains the proposal submitted to the instructor.
+* **/documentation** - Contains the proposal submitted to the instructor. (#documentation)
 * **/app** - Contains the source code and the library files necessary for running this application in android studios.
 * **/img** - Contains all the image file of this project.
 * **/LICENSE** - Contains the details of the license for this project.
