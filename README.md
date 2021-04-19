@@ -38,3 +38,8 @@ To install the application by downloading the project, follow the steps below:
 * Connect a device to the system.
 * After the device is discovered by the android studios, Click on Build/Run button to execute the project.
 * The application will open on the device you have connect to the system.
+
+
+
+## **Operating Instructions**
+## **Copyright Information**
