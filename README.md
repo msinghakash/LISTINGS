@@ -42,6 +42,18 @@ To install the application by downloading the project, follow the steps below:
 
 
 ## **Operating Instructions**
+
+Below are the steps that the user needs to follow for operating the Listings android application:
+
+## Signing Up for Listings application
+## Logging Into the Listings application
+## Selling Product on Listings
+## Buying Products from Listings
+## Know about your information
+## Know about the Listings
+## Need Help?
+
+
 ## **A Manifest(List of Files)**
 
 
