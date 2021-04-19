@@ -18,7 +18,7 @@ The android application helps its users by providing them a platform to Sell/Buy
 
 
 
-## **Requirement and Materials**
+## **Comfiguration Instructions**
 * An android based device.
 * The version on the android phone should be at least or above android version KitKat.
 * The mobile phone should be able to the internet.
@@ -42,6 +42,7 @@ To install the application by downloading the project, follow the steps below:
 
 
 ## **Operating Instructions**
+## **A Manifest(List of Files)**
 
 
 ## **Team**
