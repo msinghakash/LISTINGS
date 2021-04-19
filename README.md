@@ -42,9 +42,22 @@ To install the application by downloading the project, follow the steps below:
 
 
 ## **Operating Instructions**
-## **Copyright Information**
+
+
+## **Team**
+The build team consists of:
+Akash Singh (Role: Coding, Designing, Documentation, and Testing)
+
 ## **Credits and Acknowledgments**
+People who deserve credits for motivating me for this project:
+* Dr. Trevor Tomesh, Instructor- CS 855 Mobile Computing
+* [Coding With Tea](https://youtu.be/G0aSK9JaGmE)
+* [Coding in Flow](https://youtu.be/MfCiiTEwt3g)
+* Family and friends cannot be forgotten :)
+
+
 ## **License & Copyrights**
 
 © Akash Singh, Computer Science, University Of Regina
+
 Licensed Under [MIT LICENSE](https://github.com/akashsingh11596/LISTINGS/blob/master/LICENSE)
