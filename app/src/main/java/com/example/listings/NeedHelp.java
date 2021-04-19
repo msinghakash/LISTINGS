@@ -3,7 +3,6 @@ package com.example.listings;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 public class NeedHelp extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class NeedHelp extends AppCompatActivity {
         setContentView(R.layout.activity_need_help);
 
         needHelp = findViewById(R.id.need_help);
-
+        //Below is the instructions that user will be able to see on the screen.
         String how_to_operate = "\nBelow are the instructions to operate the the Listings application:\n\n" +
                 "- To Sign Up for the application, user need to click on either SIGN UP FOR LISTINGS\n\n" +
                 "- The user can also click on the SIGN UP to create an account for LISTINGS android application\n\n"+
