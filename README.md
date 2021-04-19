@@ -45,7 +45,8 @@ To install the application by downloading the project, follow the steps below:
 
 
 ## **Team**
-The build team consists of:
+The team for this project consists of:
+
 Akash Singh (Role: Coding, Designing, Documentation, and Testing)
 
 ## **Credits and Acknowledgments**
