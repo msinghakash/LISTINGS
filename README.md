@@ -4,4 +4,7 @@ This application is an android based e-commerce application, developed as a proj
 The android application helps its users by providing them a platform to Sell/Buy products by uploading the images of the product and entering details about the same like name, description, price, location, and contact information.
 
 ## Repository Contents
-* **/documentation** - 
+* **/documentation** - Contains the proposal submitted to the instructor.
+* **/app** - Contains the source code and the library files necessary for running this application in android studios.
+* **/img** - Contains all the image file of this project.
+* **/LICENSE** - Contains the details of the license for this project.
