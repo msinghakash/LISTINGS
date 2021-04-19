@@ -3,7 +3,12 @@
 This application is an android based e-commerce application, developed as a project for the subject of Mobile Computing. The presented content in this repository is an android application developed according to the proposal submitted as a part of the final project of the semester.
 The android application helps its users by providing them a platform to Sell/Buy products by uploading the images of the product and entering details about the same like name, description, price, location, and contact information.
 
-<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Splash_Screen.jpg" width= "100" height="200" >
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Splash_Screen.jpg" width= "150" height="300" >
+</p>
+<p align="center"> Splash Screen </p>
+
+
 
 ## Repository Contents
 * **/documentation** - Contains the proposal submitted to the instructor.
