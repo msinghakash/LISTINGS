@@ -47,7 +47,7 @@ To install the application by downloading the project, follow the steps below:
 ## **Team**
 The team for this project consists of:
 
-Akash Singh (Role: Coding, Designing, Documentation, and Testing)
+Akash Singh (Role: Designing, Coding, Testing, and Documentation)
 
 ## **Credits and Acknowledgments**
 People who deserve credits for motivating me for this project:
