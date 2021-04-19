@@ -12,9 +12,9 @@ The android application helps its users by providing them a platform to Sell/Buy
 
 ## **Repository Contents**
 * **/documentation** - Contains the proposal submitted to the instructor. [documentation](https://github.com/akashsingh11596/LISTINGS/tree/master/documentation)
-* **/app** - Contains the source code and the library files necessary for running this application in android studios.
-* **/img** - Contains all the image file of this project.
-* **/LICENSE** - Contains the details of the license for this project.
+* **/app** - Contains the source code and the library files necessary for running this application in android studios. [code](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main)
+* **/img** - Contains all the image file of this project.[img](https://github.com/akashsingh11596/LISTINGS/tree/master/img)
+* **/LICENSE** - Contains the details of the license for this project.[LICENSE](https://github.com/akashsingh11596/LISTINGS/blob/master/LICENSE)
 
 
 
