@@ -18,7 +18,7 @@ The android application helps its users by providing them a platform to Sell/Buy
 
 
 
-## **Comfiguration Instructions**
+## **Configuration Instructions**
 * An android based device.
 * The version on the android phone should be at least or above android version KitKat.
 * The mobile phone should be able to the internet.
