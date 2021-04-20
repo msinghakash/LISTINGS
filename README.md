@@ -27,6 +27,7 @@ The android application helps its users by providing them a platform to Sell/Buy
 To install the LISTINGS application, the user needs to follow any of the two ways shown below according to their convenience and preference:
 
 **BY RUNNING THE APPLICATION IN THE ANDROID STUDIOS:**
+
 To install the application by downloading the project, follow the steps below:
 * Download and install android studios in the laptop/pc.
 * Download the whole project from github.
@@ -41,6 +42,7 @@ To install the application by downloading the project, follow the steps below:
 * The application will open on the device you have connect to the system.
 
 **BY DOWNLOADING THE APK:**
+
 To install the application by downloading the apk, follow the steps below:
 * Click on [apk](https://github.com/akashsingh11596/LISTINGS/tree/master/apk)
 * Download the file.
@@ -54,13 +56,51 @@ To install the application by downloading the apk, follow the steps below:
 
 Below are the steps that the user needs to follow for operating the Listings android application:
 
-### Signing Up for Listings application
-### Logging Into the Listings application
-### Selling Product on Listings
-### Buying Products from Listings
-### Know about your information
-### Know about the Listings
-### Need Help?
+## Signing Up for Listings application:
+
+If the user is not already signed up for the Listings application, then the user will first sign up for the application.   
+To sign up for the Listings, application the user has to enter the following details:
+
+* Full Name
+* Email Id
+* Username
+* Password
+* Gender
+* Age
+* Phone Number
+
+The screenshots of the SignUp pages of the application are shown below:
+
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup1.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup2_Filled.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup3.jpg" width="270" height="600">
+<p align="center"> SignUp Screens </p>
+
+## OTP Verification
+
+After the user has entered the details during signing up , they will receive an OTP for the verfication of the account. A code will be send onto their devices. If the user is using the same device to as the phone number they have entered, the OTP will automatically be verified, without having the need to enter the OTP received manually. Below is the screenshot of the OTP screen.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/OTPverification.jpg" width="270" height="600"></p>
+<p align="center"> OTP Screen </p>
+
+## Logging Into the Listings application
+
+After the user has signed up for the Listings android application, then they can follow the below steps to log in to the application:
+
+* Click on the Country Picker to select your country (if your country is not selected).
+* Enter the phone number which you have entered while creating an account.
+* Enter the password.
+* Click on Login button.
+
+If user has not Signed Up for the application click on 'SIGN UP FOR LISTINGS'
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Login.jpg" width="270" height="600"></p>
+<p align="center"> Login Screen </p>
+## Selling Product on Listings
+## Buying Products from Listings
+## Know about your information
+## Know about the Listings
+## Need Help?
+## To LogOut of the application
 
 
 ## **A Manifest(List of Files)**
