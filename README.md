@@ -41,7 +41,13 @@ To install the application by downloading the project, follow the steps below:
 * The application will open on the device you have connect to the system.
 
 **BY DOWNLOADING THE APK:**
-
+To install the application by downloading the apk, follow the steps below:
+* Click on [apk](https://github.com/akashsingh11596/LISTINGS/tree/master/apk)
+* Download the file.
+* After the file is downloaded, copy it to the mobile device you want to install the application.
+* After the application is installed provide the permission it requires to access the internet (if the alert on the device occurs).
+* Run/Open the application.
+* You can now use the application.
 
 
 ## **Operating Instructions**
