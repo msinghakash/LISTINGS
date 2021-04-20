@@ -95,16 +95,145 @@ If user has not Signed Up for the application click on 'SIGN UP FOR LISTINGS'
 <p align="center">
 <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Login.jpg" width="270" height="600"></p>
 <p align="center"> Login Screen </p>
-## Selling Product on Listings
-## Buying Products from Listings
-## Know about your information
-## Know about the Listings
-## Need Help?
-## To LogOut of the application
 
+
+## Buying Product on Listings
+
+After the user has entered into the application, they can see the listings of the products uploaded by the users to sell. They can scroll through the listings and then can contact the user on the contact information provided by the sellers. The description and price of the product entered by the seller are also shown under the image of the product.
+
+Below is the screenshot of the listings on the application.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Buy_Page.jpg" width="270" height="600"></p>
+<p align="center"> Sample Listing Screen </p>
+
+## Selling Products from Listings
+
+To sell the products, the seller has to follow the steps as mentioned below:
+
+* Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
+* Select the 'Sell' option.
+* Click the 'Choose Photo' option.
+* Select the image of the product to upload.
+* User will be able to see the image in the blank box.
+
+Enter the details of the products:
+
+* Click on the 'Enter Product Name'.
+* Enter the name of the product.
+* Click on the 'Enter Phone Number/Email Id'.
+* Enter the contact information on which the buyer will be able to contact you.
+* Click on the 'Description'.
+* Enter the description of the product along with the price.
+* Click on the Location option.
+* Enter the location of the product.
+
+After the user has entered the details of the product, Click on the 'UPLOAD' button. This will upload the image to the listings and the user will able to see their product under the listings section, with other items that are uploaded to be sold.
+
+Below are the screenshots:
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/SellPage.jpg" width="270" height="600"></p>
+<p align="center"> Selling Products on Listings </p>
+
+## Know about your information
+
+The user can look up their information and details that they have entered while signing up for the application. The user has to follow the steps below to look up their information:
+* Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
+* Select the 'User' option.
+* The screen will now show the details of the user.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/UserPage.png" width="270" height="600"></p>
+<p align="center"> User Information </p>
+
+
+## Know about the Listings
+
+This section of the application is dedicated to information/about us section of the  the LISTINGS application. The user under this section can learn about what the LISTINGS application is and what all they can do with this application. This section of the application also provides the details about how to **contact the developer** if they want to update their information, remove their product from the platform, and if they are facing any technical issues.
+To read about the application the user has to follow the steps below:
+* Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
+* Select the 'About' option.
+* The About section of the application will appear.
+
+**IMAGE
+
+## Need Help?
+
+'Need Help?' feature of the LISTINGS application provides the users with the instructions to operate the application. There are sections dedicated to solve user's problems:
+The user can also access this from the Login page of the application. The user has to follow the steps below to get access to this feature:
+
+* Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
+* Select the 'Need Help?' option.
+* This section of the application will appear which will show the instructions to operate this application.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/NeedHelpPage.jpg" width="270" height="600"></p>
+<p align="center"> Instructions to operate Listings </p>
+
+To access it directly from the Login Page, follow the steps below:
+* Open Login Page
+* Click on the Need Help button.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Login.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/NeedHelpPage.jpg" width="270" height="600"></p>
+<p align="center"> Instructions to operate Listings </p>
+
+
+## To LogOut of the application
+To exit the Listings application, the user has to follow the steps below:
+
+* Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
+* Select the 'Logout' option.
+* You are logged out of the appllication.
+
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600"></p>
+<p align="center"> Logging Out of Listings </p>
 
 ## **A Manifest(List of Files)**
+Below are the Manifest of Files in MVC format:
+**MODEL**
+In the application the package with name '[DatabaseAndConnectors](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/DatabaseAndConnectors)' contains the files which are reponsible to connect the application to the database. They are responsible to connect the application with the FireBase(database) and update, upload, and retrieve data from it.
+The list of files under this section are:
+* [ImageAdapter](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/ImageAdapter.java)
+* [Upload](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/Upload.java)
+* [UserHelperClass](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/UserHelperClass.java)
+* [CheckInternetConnection](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/CheckInternetConnection.java)
 
+**CONTROLLER**
+In the application there are three packages with the name of '[listings](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/com/example/listings)', '[Login_SignUp](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/Login_Signup)', and '[MainScreen](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/MainScreen)'. These files are responsible to connect the view with the application using Listners, Intents and other methods. The purpose of the files under this section is to respond when the view of the application comes in contact with the user of the application. They trigger the methods and functions according to the selection of the user.
+
+* [FirstAppScreen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/com/example/listings/FirstAppScreen.java)
+* [MainActivity](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/com/example/listings/MainActivity.java)
+* [NeedHelp](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/com/example/listings/NeedHelp.java)
+* [Login](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/Login_Signup/Login.java)
+* [OTP_verification_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/Login_Signup/OTP_verification_screen.java)
+* [SignUp](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/Login_Signup/SignUp.java)
+* [SignUp2ndPageClass](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/Login_Signup/SignUp2ndPageClass.java)
+* [SignUp3rdPageClass](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/Login_Signup/SignUp3rdPageClass.java)
+* [AboutScreen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/MainScreen/AboutScreen.java)
+* [MainScreenOfApp](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/MainScreen/MainScreenOfApp.java)
+* [SellScreen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/MainScreen/SellScreen.java)
+* [userInfo](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/MainScreen/userInfo.java)
+
+**VIEW**
+This section of the application holds the list of all the view files in the '[resource layout](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/res/layout)', and [string](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/values/strings.xml) folder. The responsibility of the files under this folder is to create the UI which the user will interact with. Below are the list of all the files under this section:
+
+* [activity_first_app_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_first_app_screen.xml)
+* [activity_about_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_about_screen.xml)
+* [activity_login](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_login.xml)
+* [activity_main](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_main.xml)
+* [activity_main_screen_of_app](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_main_screen_of_app.xml)
+* [activity_need_help](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_need_help.xml)
+* [activity_o_t_p_verification_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_o_t_p_verification_screen.xml)
+* [activity_sell_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_sell_screen.xml)
+* [activity_sign_up](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_sign_up.xml)
+* [activity_sign_up2nd_page_class](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_sign_up2nd_page_class.xml)
+* [activity_sign_up3rd_page_class](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_sign_up3rd_page_class.xml)
+* [activity_user_info](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_user_info.xml)
+* [custom_grid_layout](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/custom_grid_layout.xml)
+* [header](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/header.xml)
+* [strings](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/values/strings.xml)
 
 ## **Team**
 The team for this project consists of:
