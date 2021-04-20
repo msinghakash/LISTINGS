@@ -193,6 +193,7 @@ To exit the Listings application, the user has to follow the steps below:
 ## **A Manifest(List of Files)**
 Below are the Manifest of Files in MVC format:
 **MODEL**
+
 In the application the package with name '[DatabaseAndConnectors](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/DatabaseAndConnectors)' contains the files which are reponsible to connect the application to the database. They are responsible to connect the application with the FireBase(database) and update, upload, and retrieve data from it.
 The list of files under this section are:
 * [ImageAdapter](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/ImageAdapter.java)
@@ -201,6 +202,7 @@ The list of files under this section are:
 * [CheckInternetConnection](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/DatabaseAndConnectors/CheckInternetConnection.java)
 
 **CONTROLLER**
+
 In the application there are three packages with the name of '[listings](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/com/example/listings)', '[Login_SignUp](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/Login_Signup)', and '[MainScreen](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/MainScreen)'. These files are responsible to connect the view with the application using Listners, Intents and other methods. The purpose of the files under this section is to respond when the view of the application comes in contact with the user of the application. They trigger the methods and functions according to the selection of the user.
 
 * [FirstAppScreen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/com/example/listings/FirstAppScreen.java)
@@ -217,6 +219,7 @@ In the application there are three packages with the name of '[listings](https:/
 * [userInfo](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/java/MainScreen/userInfo.java)
 
 **VIEW**
+
 This section of the application holds the list of all the view files in the '[resource layout](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/res/layout)', and [string](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/values/strings.xml) folder. The responsibility of the files under this folder is to create the UI which the user will interact with. Below are the list of all the files under this section:
 
 * [activity_first_app_screen](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/activity_first_app_screen.xml)
