@@ -40,6 +40,29 @@ To install the application by downloading the project, follow the steps below:
 
 <p align="center"> <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/installation_screenshot2.png"></p>
 
+**PREQUISITES:
+Register your app package in Google [Firebase](https://firebase.google.com/)
+
+**For adding Database to your Project.**
+* Open Android Studios. 
+* Traverse to Tools in android studios. 
+* Click on Tools -> Firebase
+* Click on **Realtime Database**
+* Click on 'Add the Realtime Database SDK to your app'.
+
+**For adding authentication to your Project.**
+* Open Android Studios. 
+* Traverse to Tools in android studios. 
+* Click on Tools -> Firebase
+* Click on **Authentication**
+* Add all the dependencies as mentioned.
+
+**For adding Cloud Storage for Firebase storage to your Project.**
+* Open Android Studios. 
+* Traverse to Tools in android studios. 
+* Click on Tools -> Firebase
+* Click on **Cloud Storage for Firebase**
+* Click on 'Add the Cloud Storage SDK to your app'.
 
 **BY DOWNLOADING THE APK:**
 
@@ -135,7 +158,7 @@ Below are the screenshots:
 <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/SellPage.jpg" width="270" height="600"></p>
 <p align="center"> Selling Products on Listings </p>
 
-## Know about your information
+## User Information
 
 The user can look up their information and details that they have entered while signing up for the application. The user has to follow the steps below to look up their information:
 * Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
@@ -147,7 +170,7 @@ The user can look up their information and details that they have entered while 
 <p align="center"> User Information </p>
 
 
-## Know about the Listings
+## About the Listings
 
 This section of the application is dedicated to information/about us section of the  the LISTINGS application. The user under this section can learn about what the LISTINGS application is and what are the features of this application. This section of the application also provides the details about **how to contact the developer** if they want to update their information, remove their product from the platform, and if they are facing any technical issues.
 
@@ -252,7 +275,7 @@ To secure applications from error and to prevent the wrong entries from the user
 Errors if values are missing in Login and SignUp pages:
 <p align="center">
 <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Login_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup1_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup2_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup3_Error.jpg" width="270" height="600"></p>
-<p align="center"> Login and Errors </p>
+<p align="center"> Login and SignUp Errors </p>
 
 If the device is not connected to the internet, following error will be shown in an alert box:
 <p align="center">
