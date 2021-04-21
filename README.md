@@ -219,6 +219,7 @@ To exit the Listings application, the user has to follow the steps below:
 
 ## **A Manifest(List of Files)**
 Below are the Manifest of Files in MVC format:
+
 **MODEL**
 
 In the application the package with name '[DatabaseAndConnectors](https://github.com/akashsingh11596/LISTINGS/tree/master/app/src/main/java/DatabaseAndConnectors)' contains the files which are reponsible to connect the application to the database. They are responsible to connect the application with the FireBase(database) and update, upload, and retrieve data from it.
