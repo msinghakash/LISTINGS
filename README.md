@@ -30,16 +30,16 @@ To install the LISTINGS application, the user needs to follow any of the two way
 
 To install the application by downloading the project, follow the steps below:
 * Download and install android studios in the laptop/pc.
-* Download the whole project from github.
-* After the project is downloaded, open android studios.
-* Go to File -> Open.
-* Click on the 'Open' option.
-* Traverse to the place where you have saved the project.
-* Click on the project.
-* Open the project in android studios.
-* Connect a device to the system.
-* After the device is discovered by the android studios, Click on Build/Run button to execute the project.
-* The application will open on the device you have connect to the system.
+* Traverse to File
+* Click on New -> Project from Version Control...
+
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/installation_screenshot1.png">
+
+* Enter the URL https://github.com/akashsingh11596/LISTINGS
+* Click on Clone option.
+
+<p align="center"> <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/installation_screenshot2.png"></p>
+
 
 **BY DOWNLOADING THE APK:**
 
@@ -71,7 +71,7 @@ To sign up for the Listings, application the user has to enter the following det
 
 The screenshots of the SignUp pages of the application are shown below:
 
-<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup1.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup2_Filled.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup3.jpg" width="270" height="600">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup1.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup2_Filled.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup3.jpg" width="270" height="600">
 <p align="center"> SignUp Screens </p>
 
 ## OTP Verification
@@ -79,8 +79,8 @@ The screenshots of the SignUp pages of the application are shown below:
 After the user has entered the details during signing up , they will receive an OTP for the verfication of the account. A code will be send onto their devices. If the user is using the same device to as the phone number they have entered, the OTP will automatically be verified, without having the need to enter the OTP received manually. Below is the screenshot of the OTP screen.
 
 <p align="center">
-<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/OTPverification.jpg" width="270" height="600"></p>
-<p align="center"> OTP Screen </p>
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/OTP_Screen.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/OTP_Received.jpg" width="270" height="600"></p>
+<p align="center"> OTP Screens </p>
 
 ## Logging Into the Listings application
 
@@ -149,13 +149,16 @@ The user can look up their information and details that they have entered while 
 
 ## Know about the Listings
 
-This section of the application is dedicated to information/about us section of the  the LISTINGS application. The user under this section can learn about what the LISTINGS application is and what all they can do with this application. This section of the application also provides the details about how to **contact the developer** if they want to update their information, remove their product from the platform, and if they are facing any technical issues.
+This section of the application is dedicated to information/about us section of the  the LISTINGS application. The user under this section can learn about what the LISTINGS application is and what are the features of this application. This section of the application also provides the details about **how to contact the developer** if they want to update their information, remove their product from the platform, and if they are facing any technical issues.
+
 To read about the application the user has to follow the steps below:
 * Click on the drawer menu on the top left of the screen/ Swipe the screen from left to right.
 * Select the 'About' option.
 * The About section of the application will appear.
 
-**IMAGE
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Drawer.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/AboutScreen.jpg" width="270" height="600">
+<p align="center"> About Screen </p>
 
 ## Need Help?
 
@@ -237,6 +240,30 @@ This section of the application holds the list of all the view files in the '[re
 * [custom_grid_layout](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/custom_grid_layout.xml)
 * [header](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/layout/header.xml)
 * [strings](https://github.com/akashsingh11596/LISTINGS/blob/master/app/src/main/res/values/strings.xml)
+
+
+## **Security Measures**
+
+To secure applications from error and to prevent the wrong entries from the user there are some steps taken during the development of the Listings android application. Below are the errors and their screenshots.
+
+* If the user is skipping enteried, they will be shown a red error on the right hand side of the text box wehere they are forgetting to insert the information.
+* The user will also be shown a message for a few seconds, in some cases.
+
+Errors if values are missing in Login and SignUp pages:
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Login_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup1_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup2_Error.jpg" width="270" height="600">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/Signup3_Error.jpg" width="270" height="600"></p>
+<p align="center"> Login and Errors </p>
+
+If the device is not connected to the internet, following error will be shown in an alert box:
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/InternetError.png" width="270" height="600"></p>
+<p align="center"> Internet Connection Error </p>
+
+If the OTP enterred by the user is wrong, then in that case a message of 'ERROR IN VERIFICATION' will be shown to the user.
+<p align="center">
+<img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/OTP_Error.jpg" width="270" height="600"></p>
+<p align="center"> OTP Error </p>
+
 
 ## **Team**
 The team for this project consists of:
