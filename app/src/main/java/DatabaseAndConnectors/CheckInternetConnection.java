@@ -7,7 +7,7 @@ import android.util.Log;
 
 
 // The purpose of this class is to check if the internet is connected.
-// If the internet connection needs to be checeked in other activities, then this java class will be called there.
+// If the internet connection needs to be checked in other activities, this java class will be called.
 public class CheckInternetConnection {
 
     public boolean isConnected(Context context)
