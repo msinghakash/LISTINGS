@@ -40,7 +40,7 @@ To install the application by downloading the project, follow the steps below:
 
 <p align="center"> <img src = "https://github.com/akashsingh11596/LISTINGS/blob/master/img/installation_screenshot2.png"></p>
 
-**PREQUISITES:
+**PREQUISITES:**
 
 Register your app package in Google [Firebase](https://firebase.google.com/)
 
