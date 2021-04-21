@@ -24,6 +24,7 @@ public class userInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
+        // Initiallizing variables
         TextView usersname, usersphonenumber, usersemail, usersusername, userspassword;
 
 
@@ -45,6 +46,7 @@ public class userInfo extends AppCompatActivity {
                 //If snapShot arrives then it indicates that the some data has arrived from the Firebase
                 if (snapshot.exists()) {
 
+                    // Retrieving the user data
                     String get_saved_password_of_user = snapshot.child(_phone).child("password").getValue(String.class);
                         String fullName = snapshot.child(_phone).child("fullName").getValue(String.class);
                         String userName = snapshot.child(_phone).child("userName").getValue(String.class);
@@ -52,12 +54,14 @@ public class userInfo extends AppCompatActivity {
                         String dob = snapshot.child(_phone).child("date").getValue(String.class);
                         String gender = snapshot.child(_phone).child("gender").getValue(String.class);
 
+                        // Setting the data on the user screen
                         usersname.setText(fullName);
                         usersphonenumber.setText(_phone);
                         usersemail.setText(email);
                         usersusername.setText(userName);
                         userspassword.setText(get_saved_password_of_user);
                     }
+                // Printing the ERROR message
                 else {
                     Toast.makeText(userInfo.this, "User does not exist", Toast.LENGTH_LONG).show();
                 }
@@ -65,6 +69,7 @@ public class userInfo extends AppCompatActivity {
             }
 
             @Override
+            // Printing the ERROR message.
             public void onCancelled(@NonNull DatabaseError error) {
 
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();

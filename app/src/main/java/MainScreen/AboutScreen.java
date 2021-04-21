@@ -9,6 +9,7 @@ import com.example.listings.R;
 
 public class AboutScreen extends AppCompatActivity {
 
+    // Inititallizing the variables.
     TextView aboutInfo;
 
     @Override
@@ -18,6 +19,7 @@ public class AboutScreen extends AppCompatActivity {
 
         aboutInfo = findViewById(R.id.about_info);
 
+        //Below is the instructions that user will be able to see on the screen.
         String about = "\nFind products, Upload product photos, Connect with sellers\n\n" +
                 "Keeping up with the products to buy and sell is now easier than ever." +
                 "Click on the Choose Photo, Upload it into the market and find an easy wasy to sell you product and grow your business\n" +
@@ -41,6 +43,8 @@ public class AboutScreen extends AppCompatActivity {
                 "buy the products from and also gives you a place to present your product into the world." +
                 "\n\nIn case of any issues contact akashsinghprojects@gmail.com"+
         "\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----THANK YOU-----\n\n\n";
+
+        // Displaying the above instructions on theto the view.
         aboutInfo.setText(about);
 
     }

@@ -6,6 +6,7 @@ public class UserHelperClass {
 
     public UserHelperClass(){}
 
+    // The data here send to OTP_verification_screen when adding a new user.
     public UserHelperClass(String fullName, String email, String userName, String password, String date, String gender, String phoneNumber) {
         this.fullName = fullName;
         this.email = email;
@@ -16,6 +17,7 @@ public class UserHelperClass {
         this.phoneNumber = phoneNumber;
     }
 
+    //Putting Getter and Setter
     public String getFullName() {
         return fullName;
     }

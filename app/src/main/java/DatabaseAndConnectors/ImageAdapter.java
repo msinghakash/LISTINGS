@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
+    // Initiallizing Variables
     private Context mContext;
     private List<Upload> mUploads;
     private OnItemClickListner mListner;
@@ -36,7 +37,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @NonNull
     @Override
+    // Inflating the view
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflating the custom_grid_layout layout file and then returing it as a view.
         View v = LayoutInflater.from(mContext).inflate(R.layout.custom_grid_layout, parent, false);
         return new ImageViewHolder(v);
     }
@@ -44,11 +47,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
 
+        // Fetching values from using Upload java class.
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
         holder.textViewEmail.setText(uploadCurrent.getSellingInformationEmail());
         holder.textViewDescription.setText(uploadCurrent.getImageDescription());
         holder.textViewLocation.setText(uploadCurrent.getImageLocation());
+
+       // Using Glide Image Loader Library
         Glide.with(mContext)
                 .load(uploadCurrent.getImageUrl())
                 .apply(new RequestOptions().override(1280,720))
@@ -65,6 +71,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener ,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
 
+        // Initiallizating variables
         public TextView textViewName;
         public TextView textViewEmail;
         public TextView textViewDescription;
@@ -74,6 +81,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public ImageViewHolder(View itemView)
         {
             super(itemView);
+
+            // Finding Views by Ids
+            // Sending these to onCreateViewHolder
             textViewName = itemView.findViewById(R.id.text_image_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
             textViewEmail = itemView.findViewById(R.id.text_image_email);
@@ -95,15 +105,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             }
         }
 
+        // Below methods for detecting clicks and ahowing delete option to the user
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
             contextMenu.setHeaderTitle("Select Action");
+            // Assigning numbers to the options in the menu.
             MenuItem delete = contextMenu.add(Menu.NONE,1,1, "Delete");
 
             delete.setOnMenuItemClickListener(this);
         }
 
         @Override
+        // Accessing the position of the menuItem andthen performing operation on it.
         public boolean onMenuItemClick(MenuItem menuItem) {
             if (mListner != null){
                 int position = getAdapterPosition();

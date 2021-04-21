@@ -140,6 +140,8 @@ public class MainScreenOfApp extends AppCompatActivity implements NavigationView
     }
 
     @Override
+
+    // Method to open respective pages when the user chooses a particular option from the menu drawer.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_userInfo:

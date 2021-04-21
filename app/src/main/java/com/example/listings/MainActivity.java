@@ -10,7 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+// This class contains the code the view which will first appear on the user's screen.
 public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;

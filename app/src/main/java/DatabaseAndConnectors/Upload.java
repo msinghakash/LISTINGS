@@ -4,6 +4,7 @@ import com.google.firebase.database.Exclude;
 
 public class Upload {
 
+    // Initiallizing Variables
     private String mName;
     private String mImageUrl;
     private String mImageDescription;

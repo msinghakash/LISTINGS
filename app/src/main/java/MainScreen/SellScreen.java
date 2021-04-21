@@ -36,6 +36,7 @@ import com.squareup.picasso.Picasso;
 
 public class SellScreen extends AppCompatActivity {
 
+    // Initiallizaing Variables
     private static final int PICK_IMAGE_REQUEST = 1;//Number wil be used to identify the image rewuest
 
     private Button mButtonChooseImage;
@@ -52,12 +53,10 @@ public class SellScreen extends AppCompatActivity {
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-    private DatabaseReference userDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         setContentView(R.layout.activity_sell_screen);
 
@@ -95,7 +94,7 @@ public class SellScreen extends AppCompatActivity {
     private void openFileChooser()
     {
         Intent intent = new Intent();
-        intent.setType("image/*");//This will make to show only image files in the folder
+        intent.setType("image/*");//This will show only image files in the folder
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
@@ -109,9 +108,6 @@ public class SellScreen extends AppCompatActivity {
             mImageUri = data.getData();
             Picasso.with(this).load(mImageUri).into(mImageView);
         }
-        {
-
-        }
     }
     //Getting file extension of image
     private String getFileExtension(Uri uri)
@@ -121,6 +117,7 @@ public class SellScreen extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
+    // Uploading file to the Firebase storage.
     private void uploadFile()
     {
         if(mImageUri != null)
@@ -158,6 +155,7 @@ public class SellScreen extends AppCompatActivity {
                         }
                     });
         }
+        // Printing ERROR in case of no file selection
         else
         {
             Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();

@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 public class NeedHelp extends AppCompatActivity {
 
+    // Initiallizing variables
     TextView needHelp;
 
     @Override
@@ -15,7 +16,7 @@ public class NeedHelp extends AppCompatActivity {
         setContentView(R.layout.activity_need_help);
 
         needHelp = findViewById(R.id.need_help);
-        //Below is the instructions that user will be able to see on the screen.
+        //Below are the instructions that user will be able to see on the screen.
         String how_to_operate = "\nBelow are the instructions to operate the the Listings application:\n\n" +
                 "- To Sign Up for the application, user need to click on either SIGN UP FOR LISTINGS\n\n" +
                 "- The user can also click on the SIGN UP to create an account for LISTINGS android application\n\n"+
@@ -64,6 +65,7 @@ public class NeedHelp extends AppCompatActivity {
                 "- Choose the LOGOUT button to exit from the application." +
                 "\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t-----THANK YOU-----\n\n";
 
+        // Displaying the above instructions on theto the view.
         needHelp.setText(how_to_operate);
 
     }

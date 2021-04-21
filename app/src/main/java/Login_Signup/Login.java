@@ -92,16 +92,20 @@ public class Login extends AppCompatActivity {
                         password_entered_by_user.setError(null);
                         password_entered_by_user.setErrorEnabled(false);
 
+                        // Gettin the values of the respective user
                         String fullName = snapshot.child(_phone).child("fullName").getValue(String.class);
                         String userName = snapshot.child(_phone).child("userName").getValue(String.class);
                         String email = snapshot.child(_phone).child("email").getValue(String.class);
                         String dob = snapshot.child(_phone).child("date").getValue(String.class);
                         String gender = snapshot.child(_phone).child("gender").getValue(String.class);
 
+                        // Using Intent to traverse to ManiScreenOfApp.class activity
                         Intent intent = new Intent(getApplicationContext(), MainScreenOfApp.class);
                         intent.putExtra("phone", _phone);
                         startActivity(intent);
-                    } else {
+                    }
+                    // Printing the messages on the uswer screen in case of any error
+                    else {
                         Log.d("Test Message", get_saved_password_of_user);
                         Toast.makeText(Login.this, "Password does not match", Toast.LENGTH_SHORT).show();
                     }
@@ -121,6 +125,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    // Method to show message on the failure of internet connection.
     private void showCustomDialogue() {
 
         Log.d("Login.java", "showCustomDialogue: Entered showCustomDialogue");
@@ -159,6 +164,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    // Validationg if phone number is entered by the user
     private Boolean validateLoginPhoneNumber() {
         //trim to remove spaces
         String phone_value = phoneNumber.getEditText().getText().toString().trim();
@@ -190,11 +196,13 @@ public class Login extends AppCompatActivity {
             return true;
         }
     }
+    // Opening SignUp page for the user.
     public void callcreateaccount(View view){
         Intent intent = new Intent(Login.this, SignUp.class);
         startActivity(intent);
     }
 
+    // Opening NeedHelp page for the user.
     public void callhelppage(View view) {
         Intent intent = new Intent(Login.this, NeedHelp.class);
         startActivity(intent);
